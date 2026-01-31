@@ -1,0 +1,29 @@
+name: Daily Code Journal Update
+
+on:
+  schedule:
+    - cron: '0 9 * * *'   # Runs every day at 9:00 UTC (adjust if needed, e.g., '0 0 * * *' for midnight)
+  workflow_dispatch:      # Allows manual runs from the Actions tab
+
+jobs:
+  update-journal:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Append daily entry
+        run: |
+          echo "## $(date '+%Y-%m-%d')" >> daily-log.md
+          echo "- Java: Practiced algorithms or OOP concepts" >> daily-log.md
+          echo "- C: Worked on low-level programming like structs/pointers" >> daily-log.md
+          echo "- Python: Scripted data processing or automation" >> daily-log.md
+          echo "- Oracle/SQL: Built queries, procedures, or database designs" >> daily-log.md
+          echo "" >> daily-log.md
+
+      - name: Commit and push
+        run: |
+          git config --global user.name "cmwrxh"
+          git config --global user.email "mwauracharles95@gmail.com"  # Use your actual GitHub email
+          git add daily-log.md
+          git commit -m "Daily practice: Java, C, Python, Oracle/SQL" || echo "No changes"
+          git push
