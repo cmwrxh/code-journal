@@ -1357,3 +1357,9 @@ Tracking my practice in Java, C, Python, and Oracle/SQL.
 - Python: Scripted data processing or automation
 - Oracle/SQL: Built queries, procedures, or database designs
 
+## 2026-09-13
+- Java: Practiced algorithms or OOP concepts
+- C: Worked on low-level programming like structs/pointers
+- Python: Scripted data processing or automation
+- Oracle/SQL: Built queries, procedures, or database designs
+
